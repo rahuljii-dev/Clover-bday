@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rupal (Clover) 🎁🎮</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: radial-gradient(circle at center, #1b1b3a 0%, #090912 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 15px;
+        }
+        /* Gift Box Overlay */
+        #giftScreen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(9, 9, 18, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+        .gift-box {
+            font-size: 110px;
+            animation: bounce 1.8s infinite;
+            filter: drop-shadow(0 0 25px #ff007f);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-25px) scale(1.05); }
+            60% { transform: translateY(-12px) scale(1.02); }
+        }
+        .tap-prompt {
+            margin-top: 20px;
+            background: linear-gradient(45deg, #ff007f, #00ffff);
+            color: #000;
+            padding: 14px 30px;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+            text-transform: uppercase;
+        }
+
+        /* Main Card */
+        .card-container {
+            display: none;
+            background: rgba(25, 20, 45, 0.85);
+            backdrop-filter: blur(20px);
+            border: 2px solid #00ffff;
+            padding: 25px 20px;
+            border-radius: 25px;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.35);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            text-align: center;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.6); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Image Carousel Slider */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            margin: 0 auto 15px auto;
+            border-radius: 18px;
+            border: 3px solid #ff007f;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+            background: #000;
+        }
+        .slides {
+            display: flex;
+            width: 600%;
+            height: 100%;
+            animation: autoSlide 18s infinite;
+        }
+        .slide {
+            width: 16.66%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @keyframes autoSlide {
+            0% { transform: translateX(0); }
+            14% { transform: translateX(0); }
+            16% { transform: translateX(-16.66%); }
+            30% { transform: translateX(-16.66%); }
+            32% { transform: translateX(-33.33%); }
+            46% { transform: translateX(-33.33%); }
+            48% { transform: translateX(-50%); }
+            62% { transform: translateX(-50%); }
+            64% { transform: translateX(-66.66%); }
+            78% { transform: translateX(-66.66%); }
+            80% { transform: translateX(-83.33%); }
+            96% { transform: translateX(-83.33%); }
+            100% { transform: translateX(0); }
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: #00ffff;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .badge-date { background: #ff007f; color: #fff; }
+        .badge-id { background: #7928ca; color: #fff; }
+
+        h1 {
+            color: #00ffff;
+            font-size: 24px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        .shayari {
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #f0f0f0;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 4px solid #ff007f;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .footer-tag {
+            font-size: 12px;
+            color: #00ffff;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gift Box Screen -->
+    <div id="giftScreen" onclick="openGift()">
+        <div class="gift-box">🎁</div>
+        <div class="tap-prompt">Tap to Open Special AirDrop, Clover! 🎮</div>
+    </div>
+
+    <!-- Main Surprise Card -->
+    <div class="card-container" id="birthdayCard">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="https://lh3.googleusercontent.com/d/1fPrAz6F3x3ILphKyFPUpF4_h8fkrkVrm" alt="Rupal Real Photo"></div>
+                <div class="slide"><img src="https://lh3.googleusercontent.com/d/1v9x-placeholder-game1" alt="Free Fire Lobby 1"></div>
+                <div class="slide"><img src="https://lh3.googleusercontent.com/d/1v9x-placeholder-game2" alt="Free Fire Lobby 2"></div>
+                <div class="slide"><img src="watermarked_img_9658065262845382911.png" alt="Cyberpunk Art"></div>
+                <div class="slide"><img src="watermarked_img_6249138886426394713.png" alt="Gaming Art"></div>
+                <div class="slide"><img src="https://lh3.googleusercontent.com/d/1v9x-placeholder-game3" alt="Free Fire Couple"></div>
+            </div>
+        </div>
+
+        <div class="badges">
+            <div class="badge badge-date">📅 26 Nov</div>
+            <div class="badge badge-id">🎮 Janvi</div>
+            <div class="badge">🍀 Clover</div>
+        </div>
+        
+        <h1>Happy Birthday Rupal! 🎉</h1>
+        
+        <div class="shayari">
+            "Game ki lobby se shuru hui thi apni yeh haseen kahani,<br>
+            Meri pyari 'Clover' aur game ki pro player 'Janvi' rani!<br><br>
+            Sajti rahe ye khushiyon ki mehfil, har pal chehre par muskan rahe... 26 November ka yeh din Rupal tumhari zindagi mein hazaron rang aur khushiyan lekar aaye! ✨"
+        </div>
+        
+        <div class="footer-tag">You're the ultimate teammate! 🚀🎮</div>
+    </div>
+
+    <script>
+        function openGift() {
+            document.getElementById('giftScreen').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('giftScreen').style.display = 'none';
+                document.getElementById('birthdayCard').style.display = 'block';
+            }, 400);
+        }
+    </script>
+
+</body>
+</html>
